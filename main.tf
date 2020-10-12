@@ -5,5 +5,5 @@ locals {
   all_names = concat(list(var.name), var.aliases)
 
   domain_name = "${var.name}${var.name == "" ? "" : "."}${local.tld}"
-  aliases     = [for alias in var.aliases: "${alias}${alias == "" ? "" : "."}${local.tld}"]
+  aliases     = [for alias in var.aliases : "${alias}${alias == "" ? "" : "."}${local.tld}"]
 }

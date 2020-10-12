@@ -1,8 +1,8 @@
 resource aws_acm_certificate cert {
-  provider = "aws.us_east_1"
+  provider = aws.us_east_1
 
-  domain_name       = local.domain_name
-  validation_method = "DNS"
+  domain_name               = local.domain_name
+  validation_method         = "DNS"
   subject_alternative_names = local.aliases
 
   lifecycle {
@@ -21,7 +21,7 @@ resource aws_route53_record cert_validation {
 }
 
 resource aws_acm_certificate_validation cert {
-  provider = "aws.us_east_1"
+  provider = aws.us_east_1
 
   certificate_arn         = aws_acm_certificate.cert.arn
   validation_record_fqdns = aws_route53_record.cert_validation.*.fqdn
