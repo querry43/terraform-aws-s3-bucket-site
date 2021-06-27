@@ -1,8 +1,3 @@
-# acm certs must be in us-east-1, we require a provider in that region to create them
-provider aws {
-  alias = "us_east_1"
-}
-
 variable name {
   description = "name for the site, not including the tld"
 }

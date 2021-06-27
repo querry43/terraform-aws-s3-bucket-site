@@ -1,5 +1,5 @@
 resource aws_cloudfront_distribution distribution {
-  aliases = concat(list(local.domain_name), local.aliases)
+  aliases = concat([local.domain_name], local.aliases)
 
   origin {
     domain_name = aws_s3_bucket.bucket.bucket_regional_domain_name
